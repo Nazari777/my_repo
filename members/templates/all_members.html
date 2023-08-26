@@ -1,0 +1,25 @@
+{% extends "master.html" %}
+
+{% block title %}
+  My Tennis Club - List of all members
+{% endblock %}
+
+{% load static %}
+  
+{% block content %}
+
+<p><a href="/">HOME</a></p>
+
+<h1>Members</h1>
+  
+<ul>
+  {% for x in mymembers %}
+    <li><a href="details/{{ x.id }}">{{ x.firstname }} {{ x.lastname }} <input type="button" value="view"/></a></li>
+  {% endfor %}
+</ul>
+
+
+<img src="{% static 'images/pamir11.jpg' %}" alt="" width="255" hight="255"> <br>
+<img src="{% static 'images/afg.jpg' %}" alt="" width="255" hight="255">
+{% endblock %}
+
